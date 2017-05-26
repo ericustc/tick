@@ -16,6 +16,8 @@ def stem(y: np.ndarray, show=True, title=None, x_range=None, y_range=None):
     title : `str`, default=`None`
         The title of the plot
 
+
+
     Returns
     -------
     output : `bk.figure`
