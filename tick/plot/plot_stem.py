@@ -6,7 +6,7 @@ def stem(y: np.ndarray, show=True, title=None, x_range=None, y_range=None):
 
     Parameters
     ----------
-    y : `np.ndarray`, shape=(n_coeffs,)
+    y : `numpy.ndarray`, shape=(n_coeffs,)
         The vector to plot
 
     show : `bool`, default=`True`
@@ -121,6 +121,7 @@ def stems_matplotlib(ys: list, titles: list = None, show=True, sync_axes=True):
     figs = []
     x_range = None
     y_range = None
+    plt.figure(figsize=())
     for idx, y in enumerate(ys):
         if titles is not None:
             title = titles[idx]
@@ -156,7 +157,8 @@ def stems(ys: list, titles: list = None, show=True, sync_axes=True,
         plots
 
     sync_axes : `bool`, default=`True`
-        If True, the axes of the stem plot are synchronized
+        If True, the axes of the stem plot are synchronized (available only
+        with ``rendering='bokeh'``
 
     rendering : {'matplotlib', 'bokeh'}, default='matplotlib'
         Rendering library. 'bokeh' might fail if the module is not installed.
@@ -167,6 +169,9 @@ def stems(ys: list, titles: list = None, show=True, sync_axes=True,
         A bokeh object containing the layout of the plot, when ``show=False``,
         None otherwise.
     """
+
+    # TODO: put matplotlib rendering outsize. It has to return the figure if show=False
+    # TODO: add a unittest
     if titles is not None:
         if len(ys) != len(titles):
             raise ValueError('Length of ``titles`` differs from the length of '
@@ -175,7 +180,7 @@ def stems(ys: list, titles: list = None, show=True, sync_axes=True,
         import matplotlib.pyplot as plt
         x_range = None
         y_range = None
-        fig = plt.figure(figsize=(9, 3 * len(ys)))
+        fig = plt.figure(figsize=(8, 2.5 * len(ys)))
         for idx, y in enumerate(ys):
             if titles is not None:
                 title = titles[idx]
@@ -183,6 +188,8 @@ def stems(ys: list, titles: list = None, show=True, sync_axes=True,
                 title = None
             ax = plt.subplot(len(ys), 1, idx + 1)
             fig = plt.stem(y, title=title, x_range=x_range, y_range=y_range)
+            if title is not None:
+                plt.title(title, fontsize=18)
         plt.tight_layout()
         if show:
             plt.show()
