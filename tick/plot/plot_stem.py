@@ -1,4 +1,5 @@
 import numpy as np
+import warnings
 
 
 def stem(y: np.ndarray, show=True, title=None, x_range=None, y_range=None):
@@ -177,6 +178,9 @@ def stems(ys: list, titles: list = None, show=True, sync_axes=True,
             raise ValueError('Length of ``titles`` differs from the length of '
                              '``ys``')
     if rendering == 'matplotlib':
+        if sync_axes:
+            warnings.warn("``sync_axes`` is useless when "
+                          "``rendering='matplotlib'``")
         import matplotlib.pyplot as plt
         x_range = None
         y_range = None
