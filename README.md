@@ -35,12 +35,38 @@ for example can easily:
 A more comprehensive list of examples can be found at in this 
 [gallery](https://x-datainitiative.github.io/tick/auto_examples/index.html).
 
+The paper associated to this library has been published on 
+[arxiv](https://arxiv.org/abs/1707.03003). If you use _tick_ in a scientific 
+publication, we would appreciate citations.
+
+## Use cases
+
+_tick_ is used for many industrial applications including:
+
+* [A joint work](https://portail.polytechnique.edu/datascience/fr/node/329) 
+  with the French national health care (CNAMTS) to analyse the huge heath 
+  database anonymously describing the medical care provided to more than 65 
+  million beneficiaries. For this project, tick is used to detect weak signals
+  in an unsupervised way such as unknown side effects for a given medicine.
+   
+* _tick_ tools have been used in finance to model high-frequency order book 
+  data and analyse interactions between different event types and/or between 
+  different assets, leveraging the full time resolution available in the 
+  original data.
+
+* Analyse social media information propagation. Thanks to a dataset collected 
+  during 2017 French election compaign on Twitter, _tick_ is used to recover, 
+  for each topic, the network across which the information spread into the 
+  polical spectrum. 
+  
+
 ## Installation
 
 ### Requirements
 
-_tick_ requires Python 3.4 or newer. Please have the required Python 
-dependencies in your Python environment:
+_tick_ currently only works on Linux/OSX systems, it also requires Python 3.4 
+or newer. Please have the required Python dependencies in your Python 
+environment:
 
 - numpy
 - sciPy
@@ -77,6 +103,11 @@ Installation may take a few minutes to build and link C++ extensions.
 _tick_ should now be available.
 
 ### Manual Install
+
+First you need to clone the repo and then init its submodules (such as cereal) 
+with
+ 
+    git submodule update --init
 
 It's possible to manually build and install tick via the setup.py script. 
 To do both in one step, do:
