@@ -44,10 +44,11 @@ publication, we would appreciate citations.
 _tick_ is used for many industrial applications including:
 
 * [A joint work](https://portail.polytechnique.edu/datascience/fr/node/329) 
-  with the French national health care (CNAMTS) to analyse the huge heath 
+  with the French national health care (CNAMTS) to analyse the huge health 
   database anonymously describing the medical care provided to more than 65 
-  million beneficiaries. For this project, tick is used to detect weak signals
-  in an unsupervised way such as unknown side effects for a given medicine.
+  million beneficiaries. For this project, _tick_ is used to detect weak
+  signals in an unsupervised way such as unknown side effects for a given
+  medicine.
    
 * _tick_ tools have been used in finance to model high-frequency order book 
   data and analyse interactions between different event types and/or between 
@@ -55,7 +56,7 @@ _tick_ is used for many industrial applications including:
   original data.
 
 * Analyse social media information propagation. Thanks to a dataset collected 
-  during 2017 French election compaign on Twitter, _tick_ is used to recover, 
+  during 2017 French election campaign on Twitter, _tick_ is used to recover, 
   for each topic, the network across which the information spread into the 
   polical spectrum. 
   
@@ -64,9 +65,9 @@ _tick_ is used for many industrial applications including:
 
 ### Requirements
 
-_tick_ currently only works on Linux/OSX systems, it also requires Python 3.4 
-or newer. Please have the required Python dependencies in your Python 
-environment:
+_tick_ currently only works on Linux/OSX systems and it also requires 
+Python 3.4 or newer. Please have the required Python dependencies in your 
+Python environment:
 
 - numpy
 - sciPy
